@@ -6,7 +6,7 @@ import DUMMY from '../../Seed';
 
 import { MdDelete } from "react-icons/md"
 import User from '../../User';
-
+import {AiOutlineFileImage} from "react-icons/ai";
 
 
 function PostDetail(props) {
@@ -110,6 +110,7 @@ function PostDetail(props) {
 					</div>
 				))}
 			</div>
+			{(getResponses().length==0)?<div className='noResponse'><AiOutlineFileImage />No response yet, be the first one to share your response</div>:''}
 		</div>
 	)
 }

@@ -1,9 +1,5 @@
-.post-detail__description {
-	margin-top: 1rem;
-}
-
 .post-detail__info {
-	margin-top: 1rem;
+	margin-bottom: 2rem;
 }
 
 .response--form {
@@ -49,7 +45,6 @@
 
 .response h1 {
 	font-size: 1.8rem;
-	margin-top: 1rem;
 }
 
 .response__image {
@@ -60,10 +55,19 @@
 	height: 20rem;
 	object-fit: cover;
 }
-
+.noResponse{
+	display: flex;
+	height: 200px;
+	justify-content: center;
+	align-items: center;
+	background-color:#F0F0F0 ;
+	color: #4d4d4d;
+	font-size: 14px;
+}
 .removeImage{
 	display: flex;
 	align-items: center;
 	padding: 3px;
 	margin-bottom: 2px;
+	
 }
