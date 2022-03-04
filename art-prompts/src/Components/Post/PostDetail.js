@@ -3,7 +3,7 @@ import { Text, Button, TextInput, Textarea } from '@mantine/core';
 import { Dropzone, MIME_TYPES } from '@mantine/dropzone';
 import './PostDetail.css'
 import DUMMY from '../../Seed';
-
+import { MdDelete } from "react-icons/md"
 
 function PostDetail(props) {
 
@@ -12,17 +12,24 @@ function PostDetail(props) {
 	const inputDescription = useRef(null);
 	const dropzoneImage = useRef(null);
 	const fileDropzone = useRef(null);
-
+	const ImagePreview = useRef(null);
 	const getResponses = () => {
 		return DUMMY.prompts[DUMMY.prompts.findIndex((prompt) => prompt.text === props.text)].responses
 	}
 
 	const fileUploadHandler = (files) => {
+		ImagePreview.current.style.display = "block";
 		dropzoneImage.current.src = URL.createObjectURL(files[0])
-		dropzoneImage.current.style = {display: "block"}
-		console.log(dropzoneImage.current.src);
+		dropzoneImage.current.style.display= "block";
+		
+		fileDropzone.current.style.display = "none";
+		
 	}
-
+	const removeUpload =()=> {
+		dropzoneImage.current.style.display= "none";
+		ImagePreview.current.style.display = "none";
+		fileDropzone.current.style.display = "block";
+	}
 	const responseSubmitHandler = () => {
 		const index = DUMMY.prompts.findIndex((prompt) => prompt.text === props.text)
 		DUMMY.prompts[index].responses.push({
@@ -50,19 +57,29 @@ function PostDetail(props) {
 			{!submitting && <Button className="button--new-prompt" onClick={() => setSubmitting(true)}>Submit a response</Button>}
 			{submitting && <div className="response response--form">
 				<div className="response__text-content">
+					<div className='col'>
 					<TextInput ref={inputTitle} placeholder="Title your piece" label="Response Title" required /> <br></br>
 					<Textarea ref={inputDescription} placeholder="Describe your art piece" label="Art Description" autosize minRows={2} required />
+					</div>
+					<div>
 					<Text size="sm" weight ="500" mb={5} mt={12}>Upload your art</Text>
+					
+					<div className="dropzone__image" ref={ImagePreview}>
+					<button className='removeImage' onClick={removeUpload}><MdDelete />Delete Image</button>
+						<img ref={dropzoneImage} style={{display:"none"}}/>
+					
+					</div>
 					<Dropzone ref={fileDropzone} onDrop={fileUploadHandler} onReject={(files) => console.log('rejected files', files)} maxSize={3 * 1024 ** 2} accept={[MIME_TYPES.jpeg, MIME_TYPES.png]}>
 						{(status) => (
 							<Fragment>
-								<div className="dropzone__image"><img ref={dropzoneImage} style={{display:"none"}}/></div>
-								<Text size="sm" color="dimmed">
+								
+								<Text size="sm" color="dimmed" className='dropzonetext'>
 									Drag your image or click here to upload.
 								</Text>
 							</Fragment>
 						)}
 					</Dropzone>
+					</div>
 					<Button onClick={() => setSubmitting(false)} mt={12} mr={15} color="gray">Cancel</Button>
 					<Button mt={12} color="green" onClick={responseSubmitHandler}>Submit</Button>
 				</div>

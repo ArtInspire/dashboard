@@ -9,12 +9,16 @@
 .mantine-Dropzone-root {
 	position: relative;
 }
+.dropzone__image{
+	display: none;
+}
 .dropzone__image img {
 	position: relative;
 	top: 0;
 	left: 0;
-	width: 100%;
+	
 	height: 100%;
+	max-height: 400px;
 }
 
 .response-list {
@@ -50,4 +54,11 @@
 	width: 100%;
 	height: 20rem;
 	object-fit: cover;
+}
+
+.removeImage{
+	display: flex;
+	align-items: center;
+	padding: 3px;
+	margin-bottom: 2px;
 }
