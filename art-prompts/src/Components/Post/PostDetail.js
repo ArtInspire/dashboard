@@ -1,8 +1,9 @@
-import { useState, useRef, Fragment, useReducer } from 'react';
+import { useState, useRef, Fragment } from 'react';
 import { Text, Button, TextInput, Textarea } from '@mantine/core';
 import { Dropzone, MIME_TYPES } from '@mantine/dropzone';
 import './PostDetail.css'
 import DUMMY from '../../Seed';
+import User from '../../User';
 
 
 function PostDetail(props) {
@@ -30,7 +31,7 @@ function PostDetail(props) {
 			title: inputTitle.current.value,
 			description: inputDescription.current.value,
 			image: dropzoneImage.current.src,
-			username: 'kiranuser'
+			username: DUMMY.users[0].username
 		})
 		setSubmitting(false)
 	}
@@ -38,20 +39,22 @@ function PostDetail(props) {
 	return (
 		<div>
 			{/* Info */}
-			<p>{props.text}</p>
+			<User username={props.username}></User>
+			<p className='post-detail__description'>{props.text}</p>
 			<div className="post-detail__info">
 				<p>
 					{props.likes} likes, {props.responses.length} responses
 				</p>
 				<p>{props.tags.map((tag) => `#${tag} `)}</p>
 			</div>
+			<br></br>
 
 			{/* New response form */}
 			{!submitting && <Button className="button--new-prompt" onClick={() => setSubmitting(true)}>Submit a response</Button>}
 			{submitting && <div className="response response--form">
 				<div className="response__text-content">
 					<TextInput ref={inputTitle} placeholder="Title your piece" label="Response Title" required /> <br></br>
-					<Textarea ref={inputDescription} placeholder="Describe your art piece" label="Art Description" autosize minRows={2} required />
+					<Textarea ref={inputDescription} placeholder="Describe your art piece" label="Art Description" autosize minRows={2} />
 					<Text size="sm" weight ="500" mb={5} mt={12}>Upload your art</Text>
 					<Dropzone ref={fileDropzone} onDrop={fileUploadHandler} onReject={(files) => console.log('rejected files', files)} maxSize={3 * 1024 ** 2} accept={[MIME_TYPES.jpeg, MIME_TYPES.png]}>
 						{(status) => (
@@ -72,12 +75,13 @@ function PostDetail(props) {
 			<div className="response-list">
 				{getResponses().map((response) => (
 					<div key={response.title} className="response">
-						<div className="response__text-content">
-							<h1>{response.title}</h1>
-							<p>{response.description}</p>
-						</div>
 						<div className="response__image">
 							<img src={response.image} alt="art" />
+						</div>
+						<div className="response__text-content">
+							<User username={response.username}></User>
+							<h1>{response.title}</h1>
+							<p>{response.description}</p>
 						</div>
 					</div>
 				))}

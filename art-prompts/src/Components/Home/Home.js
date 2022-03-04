@@ -18,6 +18,7 @@ function Home(props) {
 			text: inputPrompt.current.value,
 			likes: 0,
 			tags: inputTags.current.props.tags,
+			username: DUMMY.users[0].username,
 			responses: []
 		})
 		setOpened(false);
