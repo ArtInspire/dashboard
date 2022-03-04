@@ -1,0 +1,56 @@
+.post-preview {
+	background-color: #F0F0F0;
+	min-width: 20rem;
+	border-radius: 5px;
+	padding: 2rem 2rem;
+	margin-top: 1rem;
+	font-size: 1.4rem;
+	position: relative;
+	overflow: hidden;
+	break-inside: avoid-column;
+	cursor: pointer;
+}
+
+.post-preview__info {
+	margin-top: 1rem;
+	font-size: 1.2rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.post-preview__info * {
+	width: 50%;
+}
+
+.post-preview__tags {
+	width: 100%;
+	text-align: right;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	/* -webkit-line-clamp: 1;
+	line-clamp: 1; */
+}
+
+/* To control the height of the image section, change height of both to be the same */
+/* In order to fill the padding of the parent, we make the img absolute */
+.post-preview__image {
+	height: 15rem;
+}
+
+.post-preview img {
+	width: 100%;
+	height: 15rem;
+	left: 0;
+	bottom: 0;
+	object-fit: cover;
+	position: absolute;
+}
+
+/* Post Detail Modal */
+.post-detail__info {
+	margin-top: .7rem;
+	font-size: 1.3rem;
+	color: #4d4d4d;
+}

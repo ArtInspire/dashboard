@@ -1,0 +1,53 @@
+.post-detail__info {
+	margin-bottom: 2rem;
+}
+
+.response--form {
+	margin-top: 1rem;
+}
+
+.mantine-Dropzone-root {
+	position: relative;
+}
+.dropzone__image img {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.response-list {
+	/* display: flex;
+	flex-direction: column; */
+	margin-top: 2rem;
+	columns: 2 5rem;
+	column-gap: 2rem;
+	/* break-inside: avoid-column; */
+}
+
+.response {
+	/* width: 23rem; */
+	background-color: #F0F0F0;
+	border-radius: 6px;
+	overflow: hidden;
+	break-inside: avoid-column;
+	margin-bottom: 2rem;
+}
+
+.response__text-content {
+	padding: 1.4rem;
+}
+
+.response h1 {
+	font-size: 1.8rem;
+}
+
+.response__image {
+	line-height: 0;
+}
+.response__image img {
+	width: 100%;
+	height: 20rem;
+	object-fit: cover;
+}

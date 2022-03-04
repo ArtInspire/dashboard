@@ -1,0 +1,35 @@
+.navbar {
+	z-index: 10;
+	height: 5rem;
+	width: 100%;
+	background-color: #424242;
+	font-size: 1.7rem;
+	color: white;
+	flex-shrink: 0;
+}
+
+.navbar__list {
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+}
+
+.navbar__list > div {
+	display: flex;
+	align-items: center;
+}
+
+.navbar__left {
+	margin-left: 2rem;
+}
+.navbar__right {
+	margin-right: 2rem;
+}
+
+.navbar__item {
+	height: 100%;
+	margin: 0 1rem;
+}

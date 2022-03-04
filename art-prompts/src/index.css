@@ -1,0 +1,29 @@
+*,
+*::after,
+*::before {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: inherit;
+}
+
+html {
+	font-size: 62.5%;
+	/* font-family: 'Noto Sans', sans-serif; */
+	font-family: 'Segoe UI', sans-serif;
+	/* font-family: 'Greycliff CF, sans-serif'; */
+}
+
+body {
+	box-sizing: border-box;
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 1.4rem;
+}
+
+
+@media only screen and (max-width: 945px) {
+	.mantine-Modal-modal {
+		width: 80% !important;
+	}
+}
