@@ -1,6 +1,5 @@
 import './PostPreview.css'
 import { useState, Fragment } from 'react';
-import ReactDOM from 'react-dom'
 import { Group, Button, Modal, TextInput, Textarea } from '@mantine/core';
 import PostDetail from '../Post/PostDetail';
 
@@ -20,10 +19,6 @@ function Post(props) {
 	const postPreviewClickHandler = () => {
 		setOpened(true)
 	}
-
-	// const responseSubmitHandler = () => {
-	// 	console.log('response submitted');
-	// }
 
 	return (
 		<Fragment>

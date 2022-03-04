@@ -1,0 +1,24 @@
+.user {
+	display: flex;
+	align-items: center;
+}
+
+.user img {
+	height: 3.2rem;
+	aspect-ratio: 1/1;
+	border-radius: 50%;
+}
+
+.user__text {
+	margin-left: .7rem;
+}
+
+.user .username {
+	font-weight: 500;
+	font-size: 1.5rem;
+}
+.user .userinfo {
+	color: gray;
+	margin-top: -4px;
+	font-size: 1.2rem;
+}
