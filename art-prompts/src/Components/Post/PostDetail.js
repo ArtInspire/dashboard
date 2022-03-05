@@ -2,6 +2,7 @@ import { useState, useRef, Fragment } from 'react';
 import { Text, Button, TextInput, Textarea } from '@mantine/core';
 import { Dropzone, MIME_TYPES } from '@mantine/dropzone';
 import './PostDetail.css'
+import Image from '../UI/Image'
 import DUMMY from '../../Seed';
 
 import { MdDelete } from "react-icons/md"
@@ -95,7 +96,7 @@ function PostDetail(props) {
 				{getResponses().map((response) => (
 					<div key={response.title} className="response">
 						<div className="response__image">
-							<img src={response.image} alt="art" />
+							<Image src={response.image} alt="art" />
 						</div>
 						<div className="response__text-content">
 							<User username={response.username}></User>

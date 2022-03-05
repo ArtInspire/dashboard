@@ -1,6 +1,6 @@
 import './PostPreview.css'
 import { useState, Fragment } from 'react';
-import { Group, Button, Modal, TextInput, Textarea } from '@mantine/core';
+import { Modal } from '@mantine/core';
 import PostDetail from '../Post/PostDetail';
 
 function imagesFromResponses(responses) {
