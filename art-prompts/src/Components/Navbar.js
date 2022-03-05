@@ -1,4 +1,5 @@
 import './Navbar.css'
+import DUMMY from '../Seed'
 
 function Navbar(props) {
 	return (
@@ -15,7 +16,7 @@ function Navbar(props) {
 						<div className="navbar__item button--view">Statistics View</div> */}
 					</div>
 					<div className="navbar__right">
-						<div className="navbar__item">Kiran</div>
+						<div className="navbar__item">{DUMMY.users[0].username}</div>
 					</div>
 				</ul>
 			</nav>

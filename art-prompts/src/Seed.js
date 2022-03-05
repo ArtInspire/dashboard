@@ -12,14 +12,14 @@ const DUMMY = {
 					title: 'The Ice Castle',
 					description: 'I made this castle based off the ice castle from Game of Thrones. I wanted to make it unique by using a pastel art style.',
 					image: 'https://i.imgur.com/BnH9umG.jpeg',
-					username: 'KiranUser'
+					username: 'TestUser'
 				},
 				{
 					id: 'response2',
 					title: 'The Ice Castle 2',
 					description: 'I made this castle based off the ice castle from Game of Thrones. I wanted to make it unique by using a pastel art style. I made this castle based off the ice castle from Game of Thrones. I wanted to make it unique by using a pastel art style.',
 					image: 'https://i.imgur.com/BnH9umG.jpeg',
-					username: 'KiranUser'
+					username: 'TestUser'
 				},
 				{
 					id: 'response3',
@@ -74,6 +74,10 @@ const DUMMY = {
 		}
 	],
 	users: [
+		{
+			username: 'TestUser',
+			image: 'https://i.imgur.com/A45Gg4c.jpg'
+		},
 		{
 			username: 'KiranUser',
 			image: 'https://i.imgur.com/BwxFL7M.jpeg'

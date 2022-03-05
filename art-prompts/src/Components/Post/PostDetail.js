@@ -25,7 +25,6 @@ function PostDetail(props) {
 		ImagePreview.current.style.display = "block";
 		dropzoneImage.current.src = URL.createObjectURL(files[0])
 		dropzoneImage.current.style.display= "block";
-		
 		fileDropzone.current.style.display = "none";
 		
 	}
@@ -57,20 +56,16 @@ function PostDetail(props) {
 				</p>
 				<p>{props.tags.map((tag) => `#${tag} `)}</p>
 			</div>
-			<br></br>
 
 			{/* New response form */}
 			{!submitting && <Button className="button--new-prompt" onClick={() => setSubmitting(true)}>Submit a response</Button>}
 			{submitting && <div className="response response--form">
 				<div className="response__text-content">
 					<div className='col'>
-					<TextInput ref={inputTitle} placeholder="Title your piece" label="Response Title" required /> <br></br>
-
-					<Textarea ref={inputDescription} placeholder="Describe your art piece" label="Art Description" autosize minRows={2} required />
+						<TextInput ref={inputTitle} placeholder="Title your piece" label="Response Title" required /> <br></br>
+						<Textarea ref={inputDescription} placeholder="Describe your art piece" label="Art Description" autosize minRows={2} required />
 					</div>
 					<div>
-
-					<Textarea ref={inputDescription} placeholder="Describe your art piece" label="Art Description" autosize minRows={2} />
 
 					<Text size="sm" weight ="500" mb={5} mt={12}>Upload your art</Text>
 					

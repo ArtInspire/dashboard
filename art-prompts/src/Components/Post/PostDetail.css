@@ -1,3 +1,7 @@
+.post-detail__description {
+	margin-top: 1rem;
+}
+
 .post-detail__info {
 	margin-bottom: 2rem;
 }
@@ -45,6 +49,7 @@
 
 .response h1 {
 	font-size: 1.8rem;
+	margin-top: 1rem;
 }
 
 .response__image {
