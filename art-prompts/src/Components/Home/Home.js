@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState,useEffect } from 'react';
 import Post from './PostPreview';
 import './Home.css'
 import { Group, Button, Modal, Textarea } from '@mantine/core';
@@ -10,6 +10,7 @@ function Home(props) {
 
 	const [opened, setOpened] = useState(false);
 	const [tags, setTags] = useState([]);
+	const [textAreaRendered, settextAreaRendered] = useState(false);
 	const inputPrompt = useRef(null);
 	const inputTags = useRef(null);
 
@@ -23,13 +24,15 @@ function Home(props) {
 		})
 		setOpened(false);
 	}
-
+	
 	return (
 		<div className="home">
 			
 			{/* New Prompt Modal */}
 			<Modal centered size="55%" opened={opened} onClose={() => setOpened(false)} title="Create a new prompt">
-				<Textarea ref={inputPrompt} placeholder="Write your prompt here!" label="Your art prompt" autosize minRows={2} />
+				<Textarea autofocus ref={inputPrompt} placeholder="Write your prompt here!" label="Your art prompt" autosize minRows={2} onLoad={
+					()=>{console.log(inputPrompt.current);}
+				} />
 				<p className="label">Tags</p>
 				<ReactTagInput ref={inputTags} removeOnBackspace={true} className="tag-input" tags={tags} onChange={(newTags) => setTags(newTags)} />
 				<br></br>
@@ -40,7 +43,9 @@ function Home(props) {
 			</Modal>
 
 			{/* New Prompt Button */}
-			<Button color="grape" className="button--new-prompt" onClick={() => setOpened(true)}>
+			<Button color="grape" className="button--new-prompt" onClick={() => {setOpened(true);
+			//console.log(inputPrompt.current);
+			}}>
 				+ Post a prompt
 			</Button>
 
