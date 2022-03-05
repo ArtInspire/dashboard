@@ -26,7 +26,6 @@ function Home(props) {
 
 	return (
 		<div className="home">
-			
 			{/* New Prompt Modal */}
 			<Modal centered size="55%" opened={opened} onClose={() => setOpened(false)} title="Create a new prompt">
 				<Textarea ref={inputPrompt} placeholder="Write your prompt here!" label="Your art prompt" autosize minRows={2} />
@@ -34,23 +33,29 @@ function Home(props) {
 				<ReactTagInput ref={inputTags} removeOnBackspace={true} className="tag-input" tags={tags} onChange={(newTags) => setTags(newTags)} />
 				<br></br>
 				<Group position="apart">
-					<Button variant="light" color="red" onClick={() => setOpened(false)}>Cancel</Button>
-					<Button color="grape" className="button--new-prompt" onClick={newPromptHandler}>Submit</Button>
+					<Button variant="light" color="red" onClick={() => setOpened(false)}>
+						Cancel
+					</Button>
+					<Button color="grape" className="button--new-prompt" onClick={newPromptHandler}>
+						Submit
+					</Button>
 				</Group>
 			</Modal>
 
-			{/* New Prompt Button */}
-			<Button color="grape" className="button--new-prompt" onClick={() => setOpened(true)}>
-				+ Post a prompt
-			</Button>
-
 			{/* Post Lists */}
-			<div className="post-list">
-				{DUMMY.prompts.map((prompt) => (
-					<Post key={prompt.text} {...prompt}></Post>
-				))}
+			<div className="home__content">
+				{/* New Prompt Button */}
+				<Button color="grape" className="button--new-prompt" onClick={() => setOpened(true)}>
+					+ Post a prompt
+				</Button>
+
+				<div className="post-list">
+					{DUMMY.prompts.map((prompt) => (
+						<Post key={prompt.text} {...prompt}></Post>
+					))}
+				</div>
+				{/* <div className="right-bar"></div> */}
 			</div>
-			<div className="right-bar"></div>
 		</div>
 	)
 }

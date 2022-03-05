@@ -3,11 +3,22 @@
 	position: relative;
 }
 
+.home__content {
+	margin: 0 auto;
+	width: 70%;
+	max-width: 100rem;
+}
+
 .post-list {
-	width: 60%;
+	margin: 0 auto;
+	margin-top: 1.3rem;
 	column-count: 2;
 	column-gap: 2rem;
 	break-inside: avoid-column;
+}
+
+.post-list > :first-child {
+	margin-top: 0;
 }
 
 .right-bar {
@@ -27,7 +38,7 @@
 	.right-bar {
 		display: none;
 	}
-	.post-list {
+	.home__content {
 		width: 100%;
 		column-count: 1;
 	}
