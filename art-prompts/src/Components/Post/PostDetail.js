@@ -7,7 +7,7 @@ import DUMMY from '../../Seed';
 
 import { MdDelete } from "react-icons/md"
 import User from '../../User';
-import {AiOutlineFileImage} from "react-icons/ai";
+import {AiOutlineFileImage,AiFillHeart} from "react-icons/ai";
 
 
 function PostDetail(props) {
@@ -18,6 +18,9 @@ function PostDetail(props) {
 	const dropzoneImage = useRef(null);
 	const fileDropzone = useRef(null);
 	const ImagePreview = useRef(null);
+	
+	const [updatingLikes, setupdatingLikes] = useState(false);
+	const [toggleLiked, setLiked] = useState(false);
 	const getResponses = () => {
 		return DUMMY.prompts[DUMMY.prompts.findIndex((prompt) => prompt.text === props.text)].responses
 	}
@@ -41,7 +44,9 @@ function PostDetail(props) {
 			title: inputTitle.current.value,
 			description: inputDescription.current.value,
 			image: dropzoneImage.current.src,
-			username: DUMMY.users[0].username
+			username: DUMMY.users[0].username,
+			likes: 0,
+			liked:false
 		})
 		setSubmitting(false)
 	}
@@ -99,9 +104,27 @@ function PostDetail(props) {
 							<Image src={response.image} alt="art" />
 						</div>
 						<div className="response__text-content">
+							<div className='row'>
 							<User username={response.username}></User>
+							<button onClick={
+								()=>{
+									response.liked = !response.liked;
+									if(response.liked){
+									response.likes ++;
+									}else{
+										response.likes --;
+									}
+									
+									setLiked(!toggleLiked);
+									setupdatingLikes(!updatingLikes);
+								}
+							} className="heartImage"> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="-2 -5 35 35"><path 
+							 className={`heart ${response.liked ? "fill":""}`} stroke="black" d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"/></svg> {response.likes}
+							 </button>
+							 </div>
 							<h1>{response.title}</h1>
 							<p>{response.description}</p>
+						
 						</div>
 					</div>
 				))}
