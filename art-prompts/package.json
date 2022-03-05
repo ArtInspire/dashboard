@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "https://api.pluralsight.com:8000",
-  "homepage": "https://artinspire.github.io",
+  "homepage": "https://artinspire.github.io/dashboard",
   
   "dependencies": {
     "@mantine/core": "^3.6.14",
