@@ -1,4 +1,4 @@
-import { useRef, useState,useEffect } from 'react';
+import { useRef, useState,useEffect, useCallback } from 'react';
 import Post from './PostPreview';
 import './Home.css'
 import { Group, Button, Modal, Textarea } from '@mantine/core';
@@ -13,7 +13,7 @@ function Home(props) {
 	const [textAreaRendered, settextAreaRendered] = useState(false);
 	const inputPrompt = useRef(null);
 	const inputTags = useRef(null);
-
+	//const autoFocus = useCallback(el => el ? el.focus() : null, [])
 	const newPromptHandler = () => {
 		DUMMY.prompts.unshift({
 			text: inputPrompt.current.value,
@@ -24,19 +24,29 @@ function Home(props) {
 		})
 		setOpened(false);
 	}
+	useEffect(()=>{
+			
+			setTimeout(
+			()=>{	
+			
+			if(inputPrompt.current){
+			inputPrompt.current.focus();
+			}
+			},300);
+		
 	
+	},[opened]);
 	return (
 		<div className="home">
 			{/* New Prompt Modal */}
 			<Modal centered size="55%" opened={opened} onClose={() => setOpened(false)} title="Create a new prompt">
-				<Textarea autofocus ref={inputPrompt} placeholder="Write your prompt here!" label="Your art prompt" autosize minRows={2} onLoad={
-					()=>{console.log(inputPrompt.current);}
-				} />
+				<Textarea autoFocus={true} ref={inputPrompt} placeholder="Write your prompt here!" label="Your art prompt" autosize minRows={2} 
+				 />
 				<p className="label">Tags</p>
 				<ReactTagInput ref={inputTags} removeOnBackspace={true} className="tag-input" tags={tags} onChange={(newTags) => setTags(newTags)} />
 				<br></br>
 				<Group position="apart">
-					<Button variant="light" color="red" onClick={() => setOpened(false)}>
+					<Button variant="light" color="gray" onClick={() => setOpened(false)}>
 						Cancel
 					</Button>
 					<Button color="grape" className="button--new-prompt" onClick={newPromptHandler}>
