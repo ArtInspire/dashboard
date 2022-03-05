@@ -46,11 +46,7 @@ function Home(props) {
 			</Modal>
 
 			{/* New Prompt Button */}
-			<Button color="grape" className="button--new-prompt" onClick={() => {setOpened(true);
-			//console.log(inputPrompt.current);
-			}}>
-				+ Post a prompt
-			</Button>
+			
 
 			{/* Post Lists */}
 			<div className="home__content">
