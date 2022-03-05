@@ -46,7 +46,10 @@
 .response__text-content {
 	padding: 1.4rem;
 }
-
+.response__text-content .row{
+	display: flex;
+	justify-content: space-between;
+}
 .response h1 {
 	font-size: 1.8rem;
 	margin-top: 1rem;
@@ -58,7 +61,7 @@
 .response__image img {
 	width: 100%;
 	height: 20rem;
-	object-fit: contain;
+	object-fit: cover;
 	;
 }
 .noResponse{
@@ -76,4 +79,25 @@
 	padding: 3px;
 	margin-bottom: 2px;
 	
+}
+.heartImage{
+	display: flex;
+	border: none;
+	align-items: center;
+	padding-top: 4px;
+	font-weight: 400;
+
+}
+.heart{
+	stroke: #4d4d4d;
+	fill: transparent;
+	stroke-width: 2;
+}
+.heart.fill{
+	fill: rgb(190, 75, 224) !important;
+	stroke: rgb(190, 75, 224);
+}
+.heartImage svg{
+	fill: none;
+	stroke: black;
 }
