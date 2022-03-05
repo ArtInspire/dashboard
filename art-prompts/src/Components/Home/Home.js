@@ -15,7 +15,7 @@ function Home(props) {
 	const inputTags = useRef(null);
 
 	const newPromptHandler = () => {
-		DUMMY.prompts.push({
+		DUMMY.prompts.unshift({
 			text: inputPrompt.current.value,
 			likes: 0,
 			tags: inputTags.current.props.tags,
