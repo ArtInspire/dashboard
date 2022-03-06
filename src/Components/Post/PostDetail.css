@@ -34,6 +34,13 @@
 	/* break-inside: avoid-column; */
 }
 
+
+@media only screen and (max-width: 600px) {
+	.response-list {
+		column-count: 1;
+	}
+}
+
 .response {
 	/* width: 23rem; */
 	background-color: #F0F0F0;

@@ -24,6 +24,6 @@ body {
 
 @media only screen and (max-width: 945px) {
 	.mantine-Modal-modal {
-		width: 80% !important;
+		width: 95% !important;
 	}
 }
