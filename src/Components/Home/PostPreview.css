@@ -17,6 +17,8 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	color: #4a494b;
+	font-weight: 400;
 }
 
 .post-preview__info * {
