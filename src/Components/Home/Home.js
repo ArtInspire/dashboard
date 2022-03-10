@@ -26,13 +26,13 @@ function Home(props) {
 	}
 	useEffect(()=>{
 			
-			setTimeout(
+		setTimeout(
 			()=>{	
 			
 			if(inputPrompt.current){
 			inputPrompt.current.focus();
 			}
-			},300);
+		},300);
 		
 	
 	},[opened]);
