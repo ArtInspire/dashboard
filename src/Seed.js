@@ -59,7 +59,17 @@ const DUMMY = {
 			likes: 2,
 			tags: ['animal', 'food'],
 			username: 'KiranUser',
-			responses: []
+			responses: [
+				{
+					id:"response6",
+					title:"animal restaurant",
+					description:"panda, cat, bunny",
+					username:"Cloverain",
+					image:"https://i.imgur.com/l9GRhNM.png",
+					likes:1,
+					liked:false
+				}
+			]
 		},
 		{
 			text: 'One idea I would like to see is drawing cartoon characters in styles from other cartoon shows.',
@@ -74,7 +84,7 @@ const DUMMY = {
 			tags: ['water', 'city'],
 			username: 'KiranUser',
 			responses: [
-			{id:'response4',
+			{id:'response5',
 			title:"underwater city",
 			description:" ",
 			username: "Cloverain",
