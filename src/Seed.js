@@ -50,7 +50,15 @@ const DUMMY = {
 			likes: 6,
 			tags: ['hero', 'powers', 'city','flying'],
 			username: 'KiranUser',
-			responses: []
+			responses: [
+				{id:'response4',
+				title:"underwater city",
+				description:" ",
+				username: "Cloverain",
+				image:'https://i.imgur.com/ZWOMGEM.png',
+				likes: 2,
+				liked: false}
+			]
 		},
 		{
 			text: 'Can someone create something that has a bunch of different animals eating dinner at a table in a restaurant. Their food can be something they typically eat in the wild and they can be wearing suits/clothes.',
@@ -89,7 +97,9 @@ const DUMMY = {
 		{
 			username: 'KiranUser',
 			image: 'https://i.imgur.com/BwxFL7M.jpeg'
-		}
+		},
+		{username: "Cloverain",
+		image:'https://i.imgur.com/L0coBkP.jpg'}
 	]
 }
 
