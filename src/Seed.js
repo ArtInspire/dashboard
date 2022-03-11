@@ -51,13 +51,7 @@ const DUMMY = {
 			tags: ['hero', 'powers', 'city','flying'],
 			username: 'KiranUser',
 			responses: [
-				{id:'response4',
-				title:"underwater city",
-				description:" ",
-				username: "Cloverain",
-				image:'https://i.imgur.com/ZWOMGEM.png',
-				likes: 2,
-				liked: false}
+				
 			]
 		},
 		{
@@ -79,7 +73,14 @@ const DUMMY = {
 			likes: 5,
 			tags: ['water', 'city'],
 			username: 'KiranUser',
-			responses: []
+			responses: [
+			{id:'response4',
+			title:"underwater city",
+			description:" ",
+			username: "Cloverain",
+			image:'https://i.imgur.com/ZWOMGEM.png',
+			likes: 2,
+			liked: false},]
 		},
 		{
 			text: 'Art where there are people, but their shadows are different from how they are standing. The shadows can just be different poses or can show something deeper depending on who is creating it.',
