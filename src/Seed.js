@@ -46,6 +46,21 @@ const DUMMY = {
 			]
 		},
 		{
+			text: 'Draw your OC as a meme',
+			likes: 3,
+			tags: ['OC','meme'],
+			username: 'TestUser',
+			responses:[
+				{id:"response9",
+				title:"poppop",
+			deescription: "",
+			username:"TestUser",
+			image:"https://i.imgur.com/6F9z5Mb.png",
+			likes:"3",
+			liked:false}
+			]
+		},
+		{
 			text: 'A group of superheroes flying over a big city. Each of the heroes has a costume corresponding to their different powers. The city is filled with tall skyscrapers.',
 			likes: 6,
 			tags: ['hero', 'powers', 'city','flying'],
