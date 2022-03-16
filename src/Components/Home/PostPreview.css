@@ -39,12 +39,12 @@
 /* To control the height of the image section, change height of both to be the same */
 /* In order to fill the padding of the parent, we make the img absolute */
 .post-preview__image {
-	height: 17rem;
+	height: 22rem;
 }
 
 .post-preview img {
 	width: 100%;
-	height: 17rem;
+	height: 22rem;
 	left: 0;
 	bottom: 0;
 	object-fit: cover;
