@@ -45,6 +45,7 @@
 	/* width: 23rem; */
 	background-color: #F0F0F0;
 	border-radius: 6px;
+	border: rgb(221, 221, 221) 1px solid;
 	overflow: hidden;
 	break-inside: avoid-column;
 	margin-bottom: 2rem;

@@ -53,13 +53,11 @@ function Home(props) {
 						Submit
 					</Button>
 				</Group>
-			</Modal>
-
-			{/* New Prompt Button */}
-			
+			</Modal>			
 
 			{/* Post Lists */}
 			<div className="home__content">
+				
 				{/* New Prompt Button */}
 				<Button color="grape" className="button--new-prompt" onClick={() => setOpened(true)}>
 					+ Post a prompt
